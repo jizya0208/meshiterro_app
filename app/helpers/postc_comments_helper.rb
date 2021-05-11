@@ -1,0 +1,2 @@
+module PostcCommentsHelper
+end
