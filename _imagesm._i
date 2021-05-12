@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ec2-user/environment/meshiterro/app/views/post_images/show.html.erb:21 ActionView::CompiledTemplates#_app_views_post_images_show_html_erb___3757105417760464983_70349900775900:
+
+    [1;34m16[0m:   <%= post_comment.user.name %>　　　　　　　 <!-- post_commentからuser_idを取り出した上で、そのUserの名前を表示する-->
+    [1;34m17[0m:   <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+    [1;34m18[0m:   <% if post_comment.user == current_user %>
+    [1;34m19[0m:   <div class="comment-delete">
+    [1;34m20[0m:     <% binding.pry %>
+ => [1;34m21[0m:     <%= link_to '削除', post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete %>
+    [1;34m22[0m:   </div>
+    [1;34m23[0m:   <% end %>
+    [1;34m24[0m: <% end %>
+    [1;34m25[0m: </div>
+    [1;34m26[0m: 
+
