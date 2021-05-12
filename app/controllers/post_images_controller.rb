@@ -7,8 +7,11 @@ class PostImagesController < ApplicationController
   def create
     @post_image = PostImage.new(post_image_params)
     @post_image.user_id = current_user.id     #投稿(post_image)と投稿者(User)を結びつける。current_userは現在ログインしているユーザーを表すメソッド。
-    @post_image.save
-    redirect_to post_images_path
+    if @post_image.save
+      redirect_to post_images_path
+    else
+      render :new             #newページを再表示。
+    end
   end
   
   def index
